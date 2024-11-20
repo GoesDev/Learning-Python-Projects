@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from random import randint
 
-import Discord_Bot.VARIABLE as VARIABLE
+import VARIABLE
 
 permissions = discord.Intents.default()
 permissions.message_content = True
@@ -19,6 +19,15 @@ async def play(ctx: commands.Context):
 @bot.command()
 async def m_help(ctx: commands.Context):
     await ctx.reply(VARIABLE.ALL_COMMANDS)
+
+
+@bot.event
+async def on_message(msg: discord.Message):
+    await bot.process_commands(msg)
+    autor = msg.author
+    if autor.bot:
+        return
+    # await msg.reply("Olá, sou a Marriene, um BOT para a Guilda Velho Dragão")
 
 
 bot.run(VARIABLE.BOT)
