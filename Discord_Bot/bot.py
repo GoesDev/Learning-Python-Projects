@@ -5,8 +5,8 @@ os.system('cls')
 print("Vamos jogar Três Dragões!")
 
 
-team_blue_score = []
-team_red_score = []
+team_blue_score = 0
+team_red_score = 0
 
 
 def first_dragon():
@@ -85,7 +85,7 @@ while game_on < 3:
         blue_results = check_point(f_dragon, blue_dies)
         print(f"Você rolou {blue_dies[0]}, {blue_dies[1]}!")
         print(f"Pontuação da Rodada: {blue_results}")
-        team_blue_score.append(blue_results)
+        team_blue_score += blue_results
     else:
         game_on = 4
         break
@@ -97,7 +97,7 @@ while game_on < 3:
         red_results = check_point(f_dragon, red_dies)
         print(f"Você rolou {red_dies[0]}, {red_dies[1]}")
         print(f"Pontuação da Rodada: {red_results}")
-        team_red_score.append(red_results)
+        team_red_score += red_results
     else:
         game_on = 3
         break
