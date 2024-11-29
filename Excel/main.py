@@ -1,6 +1,6 @@
 import pandas as pd
 
-arquivo_excel = 'orcamento-cru.xlsx'
+arquivo_excel = 'orcamento.xlsx'
 df = pd.read_excel(arquivo_excel, engine='openpyxl')
 
 coluna = ['ID AGENDA',
@@ -64,4 +64,4 @@ df = df[~df['ATP'].str.startswith('OSX')]
 
 print(df.head(100))
 
-df.to_excel('_arquivo.xlsx', index=False, engine='openpyxl')
+df.to_excel('orcamento_final.xlsx', index=False, engine='openpyxl')
